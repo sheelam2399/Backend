@@ -26,3 +26,16 @@ Create user
 Save user
      ↓
 Send response
+
+// new flow
+Postman
+   ↓
+server.js
+   ↓
+Middleware
+   ↓
+userRoutes.js
+   ↓
+userController.js
+   ↓
+Response
