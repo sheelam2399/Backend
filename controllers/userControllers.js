@@ -110,10 +110,35 @@ const updateUser = (req, res) => {
 };
 
 
+// search user by name
+
+
+const searchUsers = (req, res) => {
+    const { name, email } = req.query;
+
+    const filteredUsers = users.filter((user) => {
+        const matchName = name
+            ? user.name.toLowerCase().includes(name.toLowerCase())
+            : true;
+
+        const matchEmail = email
+            ? user.email.toLowerCase().includes(email.toLowerCase())
+            : true;
+
+        return matchName && matchEmail;
+    });
+
+    res.status(200).json({
+        success: true,
+        data: filteredUsers
+    });
+};
+
 module.exports = {
     getUsers,
     getUserById,
     createUser,
     deleteUser,
-    updateUser
+    updateUser,
+    searchUsers
 };  

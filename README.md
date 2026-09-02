@@ -32,7 +32,7 @@ Postman
    ↓
 server.js
    ↓
-Middleware
+Middleware /   app.use("/api/users", userRoutes)
    ↓
 userRoutes.js
    ↓

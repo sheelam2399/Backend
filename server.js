@@ -5,9 +5,11 @@ const app = express();
 const PORT = 5000;
 
 const userRoutes = require("./routes/userRoutes");
+const loggger = require("./middleware/logger")
 
 // Middleware
 app.use(express.json());
+app.use(loggger);
 
 // Routes
 app.use("/api/users", userRoutes);
